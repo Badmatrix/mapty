@@ -1,0 +1,182 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+    --color-brand--1: #ffb545;
+    --color-brand--2: #00c46a;
+
+    --color-dark--1: #2d3439;
+    --color-dark--2: #42484d;
+    --color-light--1: #aaa;
+    --color-light--2: #ececec;
+    --color-light--3: rgb(214, 222, 224);
+}
+
+* {
+    box-sizing: inherit;
+}
+html {
+    font-size: 62.5%;
+    @apply box-border
+}
+ body {
+     font-family: quicksand;
+     @apply bg-gray-100 lg:overscroll-y-none h-screen lg:leading-6 text-gray-500 font-normal lg:overflow-hidden
+ }
+
+.wrapper {
+    @apply grid grid-flow-row grid-rows-2 lg:grid-rows-1 h-full 
+    lg:grid-flow-col lg:grid-cols-3 
+}
+a:link,
+a:visited {
+    @apply text-gray-300;
+}
+
+
+.sidebar {
+    @apply bg-gray-800 text-gray-100 row-span-1 lg:col-span-1 lg:h-screen
+    lg:px-5 lg:py-3
+}
+
+.logo{
+    @apply w-40 h-1/6 my-3 mx-1 lg:h-20 lg:mb-16 lg:self-center
+}
+.workouts{
+    @apply overflow-y-scroll overflow-x-hidden h-4/5 mt-3 
+}
+
+.workouts::-webkit-scrollbar {
+    @apply w-5
+}
+
+
+ .workout--running {
+     @apply border-l-4 border-green-600
+ }
+
+ .workout--cycling {
+     @apply border-l-4 border-orange-500
+ }
+.workout__title {
+    grid-column: 1 / -1;
+    @apply text-2xl lg:text-3xl font-semibold 
+}
+
+.workout__details {
+    @apply flex items-baseline 
+}
+.workout {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    @apply grid gap-y-3 gap-x-2 lg:grid lg:gap-y-3 lg:gap-x-6 cursor-pointer 
+    mb-5 py-5 lg:mb-7 mx-3 px-3 lg:py-10 lg:px-9 box-border hover:bg-neutral-600
+    rounded-lg bg-neutral-700 text-gray-200 transition-all ease-linear
+    shadow-sm duration-150 shadow-neutral-500  
+    
+        
+}
+
+.workout__icon {
+    @apply text-sm lg:text-3xl h-1
+}
+
+.workout__value {
+    @apply text-sm lg:text-2xl mr-1
+}
+
+.workout__unit {
+    @apply text-sm  mx-2 uppercase lg:text-lg font-bold text-gray-300
+}
+
+
+
+.form {
+    grid-template-columns: 1fr 1fr;
+    @apply mb-4 py-6 px-5 grid gap-1 h-40 mx-2
+    rounded-md lg:py-9 lg:px-11 lg:mb-7 lg:grid lg:gap-y-2 lg:gap-x-10
+     transition-all transform duration-100 bg-gray-600
+}
+ 
+
+ .form.hidden {
+     transform: translateY(-30rem);
+     /* height: 0;lg:
+    padding: 0 2.25rem; */
+     @apply transition duration-1000 ease-in-out opacity-0 mb-0 py-0 
+     lg:px-10 px-4 h-0
+ }
+
+ .form__row {
+     @apply flex items-center
+ }
+
+ .form__row--hidden {
+     @apply hidden
+ }
+
+ .form__label {
+     flex: 0 0 50%;
+     @apply lg:text-2xl lg:font-semibold text-lg font-medium
+ }
+
+.form__input { 
+    @apply py-2 px-4 text-lg w-full  border-none lg:text-2xl transition-all 
+    duration-200 ease-in-out rounded bg-gray-100 text-neutral-600
+}
+
+
+.form__input:focus {
+    @apply outline-none bg-neutral-100
+}
+
+
+.form__btn {
+    @apply hidden
+}
+.copyright {
+    @apply text-xs lg:mt-3 lg:py-5  text-neutral-400 text-left
+
+}
+ .copyright a {
+     @apply text-white
+ }
+
+.twitter-link:link,
+.twitter-link:visited {
+    @apply transition-all duration-200 ease-linear text-neutral-400
+}
+
+.twitter-link:hover,
+.twitter-link:active {
+    @apply text-gray-200
+}
+ #map {
+     @apply bg-white row-span-1 h-full lg:col-span-2
+ }
+
+
+ /* Popup width is defined in JS using options  */
+ .leaflet-popup .leaflet-popup-content-wrapper {
+     font-family: quicksand;
+     @apply pr-2 rounded-md text-gray-200 bg-neutral-700
+ }
+
+ .leaflet-popup .leaflet-popup-content {
+     @apply lg:text-xl
+ }
+
+ .leaflet-popup .leaflet-popup-tip {
+     @apply bg-neutral-600
+ }
+
+ .running-popup .leaflet-popup-content-wrapper {
+     border-left: 5px solid var(--color-brand--2);
+     @apply border-l-4 border-green-600
+ }
+
+ .cycling-popup .leaflet-popup-content-wrapper {
+     @apply border-l-4 border-orange-500
+ }
+
