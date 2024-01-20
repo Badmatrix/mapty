@@ -100,7 +100,7 @@ class App {
     }
     
     this.#workouts.push(workout)
-    console.log(this.#workouts)
+    // console.log(this.#workouts)
     this._renderMarker(workout)
     this._renderWorkout(workout)
     if (type === 'cycling') 
