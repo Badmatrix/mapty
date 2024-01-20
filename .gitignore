@@ -1,4 +1,5 @@
 node_modules
 .vscode
 src/style.css
+src/input.css
 img
